@@ -1,0 +1,15 @@
+.text1{
+    color: rgb(133, 139, 139);
+   
+}
+
+.text2{
+    color: rgb(17, 18, 18);
+   
+}
+ul{
+    display: flex;
+    list-style: none;
+    gap: 16px;
+    justify-content: center;
+}
