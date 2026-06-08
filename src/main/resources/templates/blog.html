@@ -3,24 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>ブログ</title>
+    <link rel="stylesheet" href="/style.css">
+    <title>ブログ一覧</title>
 </head>
 <body>
     <div>
-        <ul>
-        <li class="text1"><input type="text" value="キーワードを検索してみよう" ></li>
-        <li class="start"><a href="/save" >✐投稿</a></li>
-        <li class="start"><a href="/login" >ログイン</a></li>
-        <li><a href="/registration">
-        <input type="submit" value="会員登録"></a></li>
-            </ul>
-        </div>
-        <hr>
-    
-
+        <ul class="style1">
+             <form action="/blog" method="get">
+            <input type="text" name="keyword"  class="text1"> 
+                <input type="submit" value="検索" class="botton1">
+            </form>
+            <li><a href="/save" class="link1">✐投稿してみる</a></li>
+            <li  ><a href="/login"  class="link2">ログイン</a></li>
+            <li ><a href="/sign" ><input type="submit" value="会員登録" class="text3"></a></li>
+        </ul>
+    </div>
     <div>
-        <p></p>
+        <h1>ブログ一覧</h1>
+        <table>
+          <tr><th>名前</th><th>タイトル</th></tr>
+    <tr th:each="blog : ${blog}">
+      <td th:text="${blog.name}"></td>
+      <td><a href="/view"><span th:text="${blog.title}"></span></a></td>
+      </tr>
+      </table>
     </div>
 </body>
 </html>
