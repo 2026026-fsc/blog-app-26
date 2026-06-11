@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(title)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">共通タイトル</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+    <div>
+        <ul class="style1">
+             <form action="/blog" method="get">
+            <input type="text" name="keyword"  class="text1" placeholder="キーワードを検索してください"> 
+                <input type="submit" value="検索" class="botton1">
+            </form>
+            <li><a href="/save" class="link1">✐投稿してみる</a></li>
+            <li  ><a href="/login"  class="link2">ログイン</a></li>
+             <li ><a href="/sign">
+                <button>会員登録</button></a>
+            </li>
+        </ul>
+    </div>
+    </header>
+</body>
+</html>

@@ -1,33 +1,21 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
-    <title>投稿</title>
-</head>
+<head th:replace="~{layout :: head('投稿画面')}"></head>
+
 <body>
-    <div>
-        <ul class="style1">
-             <form action="/blog" method="get">
-            <input type="text" name="keyword"  class="text1"> 
-                <input type="submit" value="検索" class="botton1">
-            </form>
-            <li  ><a href="/login"  class="link2">ログイン</a></li>
-            <li ><a href="/sign" ><input type="text" value="会員登録" class="text2"></a></li>
-        </ul>
-    </div>
+    <div th:replace="~{layout :: header}"></div>
 
     <div>
            <form action="/blog"  method="post" class="save">
-            <label for="name">名前:</label>
-            <input type="text" id="name" name="name">
-            <label for="title">タイトル:</label>
-            <input type="text" name="title" id="title">
-            <label for="notes">内容:</label>
-            <input type="text" name="notes" id="notes">
+            <label for="name">名前:</label><br>
+            <input type="text" id="name" name="name" placeholder="名前を入力してください"><br>
+            <label for="title">タイトル:</label><br>
+            <input type="text" name="title" id="title" placeholder="入力してください"><br>
+            <label for="notes">内容:</label><br>
+            <input type="text" name="notes" id="notes" placeholder="入力してください">
             <li  ><input type="submit" value="✐投稿" ></li>
             </form>
+             <a href="/blog"><input type="submit" value="ブログ一覧へ戻る"></a>
     </div>
     </body>
 </html>

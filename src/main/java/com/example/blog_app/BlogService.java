@@ -3,6 +3,8 @@ package com.example.blog_app;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+import java.util.Optional;
+
 
 @Service
 public class BlogService {
@@ -18,5 +20,17 @@ public class BlogService {
   return blogRepository.searchByTitle(keyword);
 }
 
-//同じタイトルがあったらエラーの処理をする続き　参照:サービスとリポジトリ
+public void add(BlogForm form){{
+   blogRepository.save(new Blog(null, form.getName(), form.getTitle(), form.getNotes()));
+}}    
+
+public Optional<Blog> findById(Long id) {
+  return blogRepository.findById(id);
+}
+
+public void delete(Long id) {
+  blogRepository.deleteById(id);
+}
+
+
 }

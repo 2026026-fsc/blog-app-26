@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Repository;
+import java.util.Optional;
 
 @Repository
 public class BlogRepository {
@@ -27,13 +28,24 @@ public class BlogRepository {
 }
 
 public void save(Blog blog) {
-  jdbcClient.sql("INSERT INTO blog (id,name,title, notes) VALUES (:id,:name,:title,:notes)")
-      .param("id", blog.getId())
+  jdbcClient.sql("INSERT INTO blog (name,title, notes) VALUES (:name,:title,:notes)")
       .param("name",blog.getName())
       .param("title",blog.getTitle())
       .param("notes",blog.getNotes())
       .update();
+}
 
+public Optional<Blog> findById(Long id) {
+  return jdbcClient.sql("SELECT id, name,title,notes FROM blog WHERE id = :id")
+      .param("id", id)
+      .query(Blog.class)
+      .optional();
+}
+
+public void deleteById(Long id) {
+  jdbcClient.sql("DELETE FROM blog WHERE id = :id")
+      .param("id", id)
+      .update();
 }
 
 //タイトルの処理
