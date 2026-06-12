@@ -52,6 +52,18 @@ public String delete(@PathVariable Long id) {
   blogService.delete(id);
   return "redirect:/blog";
 }
+
+@GetMapping("/login")
+public String login() {
+    return "login";
+}
+
+@GetMapping("/sign")
+public String sign() {
+    return "sign";
+}
+
+
    
     
 }
