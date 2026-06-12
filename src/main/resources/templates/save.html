@@ -5,17 +5,21 @@
 <body>
     <div th:replace="~{layout :: header}"></div>
 
-    <div>
+    <h2>投稿画面</h2>
+    <div >
            <form action="/blog"  method="post" class="save">
-            <label for="name">名前:</label><br>
+            <label for="name">名前:</label>
             <input type="text" id="name" name="name" placeholder="名前を入力してください"><br>
-            <label for="title">タイトル:</label><br>
+            <label for="title">タイトル:</label>
             <input type="text" name="title" id="title" placeholder="入力してください"><br>
-            <label for="notes">内容:</label><br>
-            <input type="text" name="notes" id="notes" placeholder="入力してください">
-            <li  ><input type="submit" value="✐投稿" ></li>
-            </form>
-             <a href="/blog"><input type="submit" value="ブログ一覧へ戻る"></a>
+            <label for="notes">内容:</label>
+            <textarea name="notes" id="notes" rows="8" placeholder="入力してください"></textarea><br>
+            <button>投稿</button>
+             </form>
+
+            
+             
+             
     </div>
     </body>
 </html>

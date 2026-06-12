@@ -55,7 +55,8 @@ body {
 }
 
 .link1,
-.link2 {
+.link2,
+.link3 {
     color: #5a6065;
     text-decoration: none;
     font-size: 14px;
@@ -66,7 +67,8 @@ body {
 }
 
 .link1:hover,
-.link2:hover {
+.link2:hover,
+.link3:hover {
     color: #007bff;
 }
 
@@ -145,9 +147,62 @@ h1 + div {
 }
 .name{
     display: flex;
+    color: crimson;
+    margin-right: 20px;
 }
 .name1{
     list-style: none;
 }
+.name2{
+    margin-top: 10px;
+}
+.tyousei{
+    margin-right: 30px;
+}
+.haiti{
+    text-align: left;
+    display: flex;
+}
+.haiti2{
+     display: flex;
+}
+.save {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05)}
 
+.save label{
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+    font-size: 0.95rem;
+}
+.save input[type="text"],
+.save textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 24px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+.save ul{
+    display: flex;
+}
+h3{
+    margin-right: 280px;
+    font-size: larger;
+}
+h2{
+    margin-left: 350px;
+}
+h4{
+     margin-left: 100px;
+    font-size: larger;
+}
 

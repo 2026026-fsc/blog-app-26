@@ -5,10 +5,10 @@
 <body>
    <div th:replace="~{layout :: header}"></div>
     <div>
-        <h1>ブログ一覧</h1>
-        <div class="name">
+        <h1>ブログ一覧(タイトル押したら詳細が見れます)</h1>
+        <div class="haiti">
             <ul th:each="blog : ${blog}" class="name1">
-                <li><a th:href="@{/blog/{id}(id=${blog.id})}" th:text="${blog.title}"></a></li>
+                <li>タイトル名：<a th:href="@{/blog/{id}(id=${blog.id})}" th:text="${blog.title}"></a></li>
                 <li class="class_p">ユーザー名:<div class="class_p" th:text="${blog.name}"></div></li>
             </ul>
         </div>

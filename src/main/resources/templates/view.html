@@ -4,11 +4,12 @@
 
 <body>
         <div th:replace="~{layout :: header}"></div>
-    <div class="name"> 
+    <div > 
+      <h4>詳細画面</h4>
     <ul th:each="blog : ${blog}" class="name1">
-     <li class="name"> ユーザー名:<p class="class_p" th:text="${blog.name}"></p></li>
-      <li class="name">タイトル:<p class="class_p" th:text="${blog.title}"> </p></li>
-      <li class="name">内容:<p class="class_p" th:text="${blog.notes}"></p></li>
+     <li class="name2"> <p class="name">ユーザー名:</p><p  th:text="${blog.name}"></p></li>
+      <li class="name2"><p class="name">タイトル:</p><p  th:text="${blog.title}"> </p></li>
+      <li class="name2"><p class="name">内容:</p><p  th:text="${blog.notes}"></p></li>
     </ul>
       </div>
       
